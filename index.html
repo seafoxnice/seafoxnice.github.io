@@ -6,21 +6,14 @@
 <title>Simple Audio Player</title>
 <style>
   #player-container {
-    width: 35px; /* Reduced to 85% of original size */
-    height: 35px; /* Reduced to 85% of original size */
-    background-color: transparent; /* No background color */
+    width: 35px; /* Adjust the size if needed */
+    height: 35px; /* Adjust the size if needed */
+    background: url('https://raw.githubusercontent.com/seafoxnice/seafoxnice.github.io/main/image_speaker.png') no-repeat center center;
+    background-size: contain; /* Ensures the image fits within the container */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
-
-  #player-container:before {
-    content: "🕪"; /* Speaker icon */
-    font-size: 20px;
-    color: gray; /* All gray color */
-    position: relative; /* Positioning relative to the container */
-    top: 7px; /* Moving it down */
   }
 
   body {
