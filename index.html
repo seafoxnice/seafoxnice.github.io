@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Audio Player</title>
-  <style>
-    #player-container {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: lightgrey;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Audio Player</title>
+<style>
+  #player-container {
+    width: 42px; /* Reduced to 85% of original size */
+    height: 42px; /* Reduced to 85% of original size */
+    background-color: transparent; /* No background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 
-    #player-container:before {
-      content: "🔊";
-      font-size: 20px;
-    }
+  #player-container:before {
+    content: "▶"; /* Simpler speaker icon */
+    font-size: 20px;
+    color: gray; /* All gray color */
+  }
 
-    body {
-      margin: 0;
-    }
-  </style>
+  body {
+    margin: 0;
+  }
+</style>
 </head>
 <body>
-  <div id="player-container" onclick="toggleAudio()"></div>
+<div id="player-container" onclick="toggleAudio()"></div>
 
-  <audio id="audio-element">
-    <source src="https://docs.google.com/uc?export=open&id=10c6IqpTd_geUf8nM5RYByBVbjMhmsUeV" type="audio/mpeg">
-  </audio>
+<audio id="audio-element">
+  <source src="https://docs.google.com/uc?export=open&id=10c6IqpTd_geUf8nM5RYByBVbjMhmsUeV" type="audio/mpeg">
+</audio>
 
-  <script>
-    var audioElement = document.getElementById("audio-element");
-    var playerContainer = document.getElementById("player-container");
+<script>
+  var audioElement = document.getElementById("audio-element");
+  var playerContainer = document.getElementById("player-container");
 
-    function toggleAudio() {
-      if (audioElement.paused) {
-        audioElement.play();
-        playerContainer.style.backgroundColor = "lightblue";
-      } else {
-        audioElement.pause();
-        playerContainer.style.backgroundColor = "lightgrey";
-      }
+  function toggleAudio() {
+    if (audioElement.paused) {
+      audioElement.play();
+      playerContainer.style.color = "lightgrey"; /* Changing color on play */
+    } else {
+      audioElement.pause();
+      playerContainer.style.color = "gray"; /* Changing color on pause */
     }
-  </script>
+  }
+</script>
 </body>
 </html>
